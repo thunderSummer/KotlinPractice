@@ -1,11 +1,13 @@
 package com.chapter10
 
 import kotlin.reflect.KAnnotatedElement
+import kotlin.reflect.KClass
 import kotlin.reflect.full.memberProperties
+class Person( val name:String,val age:Int){
 
-class Person(val name:String,val age:Int){
-    lateinit var a :String
-    fun ass()  =  println(3)
+     var a :String=""
+
+
 }
 fun a(x:Int)  =  println(3)
 fun main(args : Array<String>){
@@ -26,8 +28,10 @@ fun main(args : Array<String>){
 
    // kClass.memberProperties.forEach { println(it.name) }
 
-
     println(sum(78,90){x,y->x*y})
     var sum = {x:Int,u:Int -> x+u}
 }
 fun sum(x:Int,y:Int,f:(Int,Int)->Int):Int = f(x,y)
+@Target(AnnotationTarget.PROPERTY_GETTER)
+annotation class JsonName(val name:String)
+annotation class JsonNameJava(val name: String)

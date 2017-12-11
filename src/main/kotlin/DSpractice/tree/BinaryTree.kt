@@ -2,8 +2,9 @@ package DSpractice.tree
 
 
 import java.util.*
+import kotlin.collections.ArrayList
 
-class BinaryTree<T>{
+open class BinaryTree<T>{
     var emptyNum:Int=0
     var root:BinaryNode<T>?=null
     var deepth=0
@@ -58,7 +59,7 @@ class BinaryTree<T>{
         println()
     }
 
-    fun insert(node:BinaryNode<T>?){
+    private fun insert(node:BinaryNode<T>?){
         var emptyCurrent =0
         if(node==null){
             emptyNum++
@@ -206,15 +207,8 @@ class BinaryTree<T>{
                 break
             }
         }
-        (0..mid.size)
-                .filter { pre[0]==mid[it] }
-                .forEach {                 node.leftChild=_createTree1(pre.subList(1,it+1),mid.subList(0,it))
-                    node.rightChild=_createTree1(pre.subList(it+1,pre.size), mid.subList(it+1, mid.size)) }
         return node
     }
-
-
-
 
 
 }

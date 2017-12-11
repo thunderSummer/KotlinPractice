@@ -1,5 +1,6 @@
 package com.chapter7
 
+import java.lang.reflect.Type
 
 
 data class Point(val x:Int , val y:Int) :Comparable<Point>{
@@ -39,4 +40,16 @@ fun String.fil(x:Int,y:Int,predicate: String.(Int ,Int) -> Unit ):String{
     s.predicate(x,y)
     return "ss"
 }
+//class Foo{
+//   val p : Type by Delegate1()
+//
+//}
+//class Delegate1(){
+//    operator fun getValue(){
+//
+//    }
+//    operator fun setValue(int:Int){
+//
+//    }
+//}
 
